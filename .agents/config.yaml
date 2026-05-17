@@ -1,0 +1,31 @@
+version: "2.0"
+agent_settings:
+  execution_policy: "restricted" # Options: open, restricted, hermetic
+  
+  # The Trusted Binary List
+  trusted_binaries:
+    - name: "go"
+      path: "C:\\Program Files\\Go\\bin\\go.exe"
+      allow_args: true # Permits the agent to run 'go run', 'go build', etc.
+    - name: "terraform"
+      path: "C:\\Users\\russe\\AppData\\Local\\Microsoft\\WinGet\\Links\\terraform.exe"
+      allow_args: true
+    - name: "npx"
+      path: "C:\\Program Files\\nodejs\\npx.cmd"
+      allow_args: true      
+    - name: "npm"
+      path: "C:\\Program Files\\nodejs\\npm.cmd"
+      allow_args: true
+    - name: "npm_ps1"
+      path: "C:\\Program Files\\nodejs\\npm.ps1"
+      allow_args: true      
+    - name: "node"
+      path: "C:\\Program Files\\nodejs\\node.exe"
+      allow_args: true  
+    - name: "cmd"
+      path: "C:\\Windows\\System32\\cmd.exe"
+      allow_args: true
+  # Environment Overrides
+  env_vars:
+    GOROOT: "C:\\Program Files\\Go"
+    GOPATH: "C:\\Users\\russe\\go"
