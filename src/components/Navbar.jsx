@@ -1,88 +1,117 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/logo.png';
+
+const navLinks = [
+  { label: 'Services', href: '#services' },
+  { label: 'About', href: '#about' },
+  { label: 'Work', href: '#work' },
+  { label: 'Contact', href: '#contact' },
+];
 
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 30);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-    const navLinks = [
-        { name: 'Services', href: '#services' },
-        { name: 'About', href: '#about' },
-        { name: 'Contact', href: '#contact' },
-    ];
+  return (
+    <motion.nav
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-white/90 backdrop-blur-xl shadow-card border-b border-fluff-sky/20'
+          : 'bg-transparent'
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+        {/* Logo */}
+        <a href="#hero" id="nav-logo" className="flex items-center gap-3 group">
+          <motion.img
+            src="/logo.jpeg"
+            alt="Fluff Ball Software Logo"
+            className="h-12 w-auto rounded-2xl shadow-fluff group-hover:shadow-fluff-lg transition-shadow duration-300"
+            whileHover={{ rotate: [0, -5, 5, -3, 0], transition: { duration: 0.5 } }}
+          />
+          <div className="hidden sm:block">
+            <p className="font-display text-fluff-navy text-lg leading-tight">Fluff Ball</p>
+            <p className="text-xs font-semibold text-fluff-sky tracking-widest uppercase">Software Ltd.</p>
+          </div>
+        </a>
 
-    return (
-        <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/50 backdrop-blur-xl border-b border-white/5 py-4' : 'bg-transparent py-6'
-                }`}
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              id={`nav-${link.label.toLowerCase()}`}
+              className="font-semibold text-fluff-navy/80 hover:text-fluff-sky transition-colors duration-200 relative group"
+            >
+              {link.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-fluff-sky rounded-full group-hover:w-full transition-all duration-300" />
+            </a>
+          ))}
+          <a
+            href="#contact"
+            id="nav-cta"
+            className="btn-shine px-6 py-2.5 bg-fluff-navy text-white font-bold rounded-full shadow-navy hover:bg-fluff-sky transition-colors duration-300 text-sm"
+          >
+            Let's Chat! ✨
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          id="mobile-menu-btn"
+          className="md:hidden p-2 rounded-xl text-fluff-navy"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
         >
-            <div className="container mx-auto px-6 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                    <img src={logo} alt="Vyla Logo" className="h-10 w-10 object-contain drop-shadow-[0_0_10px_rgba(255,100,50,0.5)]" />
-                    <span className="text-2xl font-bold tracking-tight bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">VYLA</span>
-                </div>
+          {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
 
-                {/* Desktop Nav */}
-                <div className="hidden md:flex items-center gap-8">
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            className="text-sm font-medium text-white/80 hover:text-vyla-primary transition-colors"
-                        >
-                            {link.name}
-                        </a>
-                    ))}
-                    <a href="#contact" className="px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 backdrop-blur-sm transition-all text-sm font-medium">
-                        Get Started
-                    </a>
-                </div>
-
-                {/* Mobile Toggle */}
-                <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
-                    {isOpen ? <X /> : <Menu />}
-                </button>
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-white/95 backdrop-blur-xl border-t border-fluff-sky/20 px-6 pb-6"
+          >
+            <div className="flex flex-col gap-4 pt-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="font-bold text-fluff-navy hover:text-fluff-sky transition-colors py-2 text-lg"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a
+                href="#contact"
+                onClick={() => setMenuOpen(false)}
+                className="btn-shine text-center px-6 py-3 bg-fluff-navy text-white font-bold rounded-full shadow-navy mt-2"
+              >
+                Let's Chat! ✨
+              </a>
             </div>
-
-            {/* Mobile Menu */}
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-black/90 backdrop-blur-xl border-b border-white/10 overflow-hidden"
-                    >
-                        <div className="px-6 py-8 flex flex-col gap-6">
-                            {navLinks.map((link) => (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="text-lg font-medium text-white/90 hover:text-vyla-primary"
-                                >
-                                    {link.name}
-                                </a>
-                            ))}
-                            <a href="#contact" onClick={() => setIsOpen(false)} className="w-full text-center py-3 bg-vyla-primary hover:bg-red-600 rounded-lg font-bold transition-all">
-                                Get Started
-                            </a>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </nav>
-    );
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
+  );
 };
 
 export default Navbar;

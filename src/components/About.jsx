@@ -1,58 +1,168 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin } from 'lucide-react';
+import { CheckCircle2, Coffee, Users, Lightbulb } from 'lucide-react';
+
+const values = [
+  {
+    icon: '🐾',
+    title: 'Approachable',
+    desc: 'No jargon. No gatekeeping. Just friendly, clear conversations about what your project needs.',
+  },
+  {
+    icon: '⚡',
+    title: 'Capable',
+    desc: 'Underneath the fluffy exterior is serious engineering talent. We ship things that work, and work well.',
+  },
+  {
+    icon: '🎯',
+    title: 'Focused',
+    desc: 'We keep things simple and purposeful. Your goals drive every decision we make.',
+  },
+  {
+    icon: '🤝',
+    title: 'Collaborative',
+    desc: "You're not a ticket in a queue. You're a partner. We work together, transparently, every step of the way.",
+  },
+];
+
+const perks = [
+  'Small studio feel, big-agency skills',
+  'Plain-English communication always',
+  'Transparent pricing, no nasty surprises',
+  'Fast turnaround without cutting corners',
+  'AI-native from the ground up',
+  'We actually like what we build',
+];
 
 const About = () => {
-    return (
-        <section id="about" className="py-24 relative z-10 bg-black/20">
-            <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
+  return (
+    <section id="about" className="section-padding relative overflow-hidden bg-fluff-navy">
+      {/* Decorative blobs */}
+      <div className="absolute top-0 right-0 w-80 h-80 bg-fluff-sky/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-fluff-accent/8 rounded-full blur-3xl pointer-events-none" />
 
-                <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="flex-1"
-                >
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                        Innovating from <br />
-                        <span className="text-vyla-secondary">Bournemouth</span>
-                    </h2>
-                    <div className="space-y-6 text-white/70 text-lg leading-relaxed">
-                        <p>
-                            Vyla was founded with a singular mission: to demystify Artificial Intelligence for businesses and unlock its true potential.
-                        </p>
-                        <p>
-                            Based in the coastal tech hub of Bournemouth, UK, we combine the tranquility of our surroundings with the fast-paced evolution of AI. We believe that great technology should be intuitive, powerful, and accessible.
-                        </p>
-                        <div className="flex items-center gap-2 text-vyla-primary font-medium">
-                            <MapPin className="w-5 h-5" />
-                            <span>Dorset, United Kingdom</span>
-                        </div>
-                    </div>
-                </motion.div>
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card-dark shadow-navy border border-fluff-sky/30 mb-6">
+            <span>🐱</span>
+            <span className="text-sm font-bold text-fluff-skyLight">Who We Are</span>
+          </div>
+          <h2 className="font-display text-5xl md:text-6xl text-white mb-4">
+            Meet the <span className="text-fluff-sky">Fluff Ball</span>
+          </h2>
+          <p className="text-lg text-white/60 max-w-2xl mx-auto font-semibold">
+            We're a small-but-mighty software studio with a big personality and even bigger ambitions.
+          </p>
+        </motion.div>
 
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                    className="flex-1 w-full"
-                >
-                    {/* Decorative Image/Pattern Area */}
-                    <div className="relative aspect-square md:aspect-video rounded-3xl overflow-hidden bg-gradient-to-tr from-vyla-dark to-vyla-card border border-white/10 p-1">
-                        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1548695602-53ecb1e2a6d8?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 mix-blend-overlay hover:scale-110 transition-transform duration-1000 grayscale hover:grayscale-0"></div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+        {/* Two-column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
-                        <div className="absolute bottom-6 left-6 text-white text-sm font-mono tracking-widest uppercase">
-                            Est. {new Date().getFullYear()}
-                        </div>
-                    </div>
-                </motion.div>
-
+          {/* Left — Story */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <div className="glass-card-dark rounded-3xl p-8 border border-fluff-sky/20">
+              <div className="text-4xl mb-4">🐱‍💻</div>
+              <h3 className="font-display text-3xl text-white mb-4">Our Story</h3>
+              <p className="text-white/70 leading-relaxed font-semibold text-base mb-4">
+                Fluff Ball Software was born from a simple idea: technology doesn't have to be cold and intimidating.
+                It can be warm, approachable, and even a little bit fluffy.
+              </p>
+              <p className="text-white/70 leading-relaxed font-semibold text-base mb-4">
+                We combine serious software engineering with a genuine love for great design and clear communication.
+                Whether you're a start-up with a wild idea or an established business ready to modernise,
+                we're here for it.
+              </p>
+              <p className="text-white/70 leading-relaxed font-semibold text-base">
+                From websites to AI-powered platforms — we build with care, curiosity, and just the right amount of fun. 🎉
+              </p>
             </div>
-        </section>
-    );
+
+            {/* Perks list */}
+            <div className="glass-card-dark rounded-3xl p-8 border border-fluff-sky/20">
+              <h4 className="font-display text-xl text-fluff-sky mb-5 flex items-center gap-2">
+                <CheckCircle2 className="w-5 h-5" /> Why Work With Us
+              </h4>
+              <ul className="space-y-3">
+                {perks.map((perk, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.08 }}
+                    className="flex items-center gap-3 text-white/80 font-semibold"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-fluff-sky flex-shrink-0" />
+                    {perk}
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+
+          {/* Right — Values */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-4"
+          >
+            <h3 className="font-display text-3xl text-white mb-6 text-center lg:text-left">Our Values</h3>
+            {values.map((val, i) => (
+              <motion.div
+                key={i}
+                id={`about-value-${i}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ x: 8, transition: { duration: 0.2 } }}
+                className="glass-card-dark rounded-2xl p-6 border border-fluff-sky/20 flex items-start gap-4 cursor-default group"
+              >
+                <span className="text-3xl flex-shrink-0 group-hover:scale-110 transition-transform duration-200">{val.icon}</span>
+                <div>
+                  <h4 className="font-display text-xl text-fluff-sky mb-1">{val.title}</h4>
+                  <p className="text-white/65 text-sm font-semibold leading-relaxed">{val.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+
+            {/* Fun stats card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="glass-card-dark rounded-2xl p-6 border border-fluff-gold/30 bg-fluff-gold/5"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <Coffee className="w-5 h-5 text-fluff-gold" />
+                <span className="font-bold text-fluff-gold text-sm uppercase tracking-wide">Fun Fact</span>
+              </div>
+              <p className="text-white/80 font-semibold text-sm leading-relaxed">
+                We consume an estimated <span className="text-fluff-gold font-bold">847 cups of tea</span> per project.
+                This directly correlates with code quality. Science. 🍵
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default About;
