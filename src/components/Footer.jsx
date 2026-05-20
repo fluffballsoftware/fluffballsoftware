@@ -89,6 +89,12 @@ const Footer = () => {
           ))}
         </div>
 
+        {/* Company Legal Info */}
+        <div className="border-t border-white/8 py-6 text-white/40 text-xs text-center md:text-left space-y-1">
+          <p>FLUFF BALL SOFTWARE LTD is registered in England and Wales. Company number: 17229696.</p>
+          <p>Registered office: 71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ.</p>
+        </div>
+
         {/* Bottom bar */}
         <div className="border-t border-white/8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/35 text-xs font-semibold">
           <p>© {year} Fluff Ball Software Ltd. All rights reserved.</p>
