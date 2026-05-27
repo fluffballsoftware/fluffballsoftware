@@ -7,7 +7,6 @@ const serviceOptions = [
   'App Development',
   'AI Consultancy',
   'Software Consultancy',
-  'Branding & Design',
   'Launch Package',
   'Something Else Entirely',
 ];
@@ -71,7 +70,7 @@ const Contact = () => {
                 emoji: '📬',
                 label: 'Email Us',
                 value: 'hello@fluffballsoftware.com',
-                sub: 'We reply within 24 hours',
+                sub: 'We reply as soon as possible',
                 color: 'border-fluff-sky/30',
               },
               {
@@ -86,8 +85,8 @@ const Contact = () => {
                 icon: MapPin,
                 emoji: '📍',
                 label: 'Based In',
-                value: 'United Kingdom',
-                sub: 'Working with clients worldwide 🌍',
+                value: 'South Coast & London',
+                sub: 'From Bournemouth to the Big Smoke',
                 color: 'border-fluff-accent/30',
               },
             ].map((item, i) => {
@@ -145,7 +144,7 @@ const Contact = () => {
                   <CheckCircle2 className="w-16 h-16 text-fluff-mint mx-auto mb-4" />
                   <h3 className="font-display text-3xl text-fluff-navy mb-3">Message Sent! 🎉</h3>
                   <p className="text-fluff-navy/60 font-semibold">
-                    Thanks for reaching out! We'll be in touch within 24 hours. In the meantime, go pet a cat. 🐱
+                    Thanks for reaching out! We'll be in touch soon. In the meantime, go pet a cat. 🐱
                   </p>
                 </motion.div>
               ) : (

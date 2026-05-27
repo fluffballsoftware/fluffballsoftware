@@ -141,23 +141,7 @@ const About = () => {
               </motion.div>
             ))}
 
-            {/* Fun stats card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="glass-card-dark rounded-2xl p-6 border border-fluff-gold/30 bg-fluff-gold/5"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                <Coffee className="w-5 h-5 text-fluff-gold" />
-                <span className="font-bold text-fluff-gold text-sm uppercase tracking-wide">Fun Fact</span>
-              </div>
-              <p className="text-white/80 font-semibold text-sm leading-relaxed">
-                We consume an estimated <span className="text-fluff-gold font-bold">847 cups of tea</span> per project.
-                This directly correlates with code quality. Science. 🍵
-              </p>
-            </motion.div>
+
           </motion.div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Globe, Smartphone, Brain, Code2, Palette, Rocket } from 'lucide-react';
+import { Globe, Smartphone, Brain, Code2, Rocket } from 'lucide-react';
 
 const services = [
   {
@@ -48,18 +48,6 @@ const services = [
     features: ['Tech Stack Reviews', 'Architecture Design', 'Code Audits', 'Team Mentoring'],
     color: 'from-fluff-gold/20 to-fluff-accent/10',
     accent: 'text-yellow-500',
-    badge: '',
-    badgeColor: '',
-  },
-  {
-    id: 'branding-design',
-    icon: Palette,
-    emoji: '🎨',
-    title: 'Branding & Design',
-    description: 'Visual identities with personality. Logos, colours, and design systems that make your brand unforgettable.',
-    features: ['Logo Design', 'Brand Guidelines', 'UI Design Systems', 'Marketing Assets'],
-    color: 'from-fluff-purple/20 to-fluff-accent/10',
-    accent: 'text-fluff-purple',
     badge: '',
     badgeColor: '',
   },

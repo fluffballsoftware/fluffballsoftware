@@ -158,13 +158,6 @@ const Hero = () => {
 
           {/* Floating badges on logo */}
           <motion.div
-            className="absolute -top-4 -right-4 glass-card px-3 py-2 rounded-2xl shadow-fluff border border-fluff-sky/30 text-sm font-bold text-fluff-navy flex items-center gap-1.5"
-            animate={{ rotate: [0, 5, -5, 0], y: [0, -5, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
-          >
-            🐾 Since 2025
-          </motion.div>
-          <motion.div
             className="absolute -bottom-4 -left-4 glass-card px-3 py-2 rounded-2xl shadow-fluff border border-fluff-accent/30 text-sm font-bold text-fluff-navy flex items-center gap-1.5"
             animate={{ rotate: [0, -5, 5, 0], y: [0, 5, 0] }}
             transition={{ duration: 5, repeat: Infinity, delay: 1 }}

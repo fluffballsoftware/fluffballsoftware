@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Github, Linkedin, Twitter } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 const footerLinks = {
   Services: [
@@ -17,11 +17,6 @@ const footerLinks = {
   ],
 };
 
-const socials = [
-  { icon: Github, label: 'GitHub', href: '#' },
-  { icon: Linkedin, label: 'LinkedIn', href: '#' },
-  { icon: Twitter, label: 'Twitter', href: '#' },
-];
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -51,22 +46,6 @@ const Footer = () => {
             <p className="text-white/50 font-semibold text-sm leading-relaxed max-w-xs mb-6">
               Friendly Solutions, Powerful Code. We build websites, apps, and software with personality — plus a healthy dose of AI.
             </p>
-            {/* Socials */}
-            <div className="flex items-center gap-3">
-              {socials.map((s) => {
-                const Icon = s.icon;
-                return (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    aria-label={s.label}
-                    className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/50 hover:text-fluff-sky hover:border-fluff-sky/40 hover:bg-fluff-sky/10 transition-all duration-200"
-                  >
-                    <Icon className="w-4 h-4" />
-                  </a>
-                );
-              })}
-            </div>
           </div>
 
           {/* Link columns */}
@@ -90,16 +69,16 @@ const Footer = () => {
         </div>
 
         {/* Company Legal Info */}
-        <div className="border-t border-white/8 py-6 text-white/40 text-xs text-center md:text-left space-y-1">
+        <div className="border-t border-white/8 pt-6 pb-2 text-white/40 text-xs text-center md:text-left space-y-1">
           <p>FLUFF BALL SOFTWARE LTD is registered in England and Wales. Company number: 17229696.</p>
           <p>Registered office: 71-75 Shelton Street, Covent Garden, London, United Kingdom, WC2H 9JQ.</p>
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/35 text-xs font-semibold">
+        <div className="pb-6 pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/35 text-xs font-semibold">
           <p>© {year} Fluff Ball Software Ltd. All rights reserved.</p>
           <p className="flex items-center gap-1.5">
-            Made with <Heart className="w-3 h-3 text-fluff-accent fill-fluff-accent" /> and far too much tea ☕
+            Made with <Heart className="w-3 h-3 text-fluff-accent fill-fluff-accent" /> and yes, we named the company after the cat 🐱
           </p>
         </div>
       </div>
