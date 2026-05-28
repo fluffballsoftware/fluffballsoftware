@@ -12,8 +12,6 @@ const services = [
     features: ['Responsive & Mobile-First', 'SEO Optimised', 'Blazing Fast', 'Accessibility Built-in'],
     color: 'from-fluff-sky/20 to-fluff-navy/10',
     accent: 'text-fluff-sky',
-    badge: 'Most Popular ⭐',
-    badgeColor: 'bg-fluff-sky/15 text-fluff-sky border-fluff-sky/30',
   },
   {
     id: 'app-development',
@@ -24,8 +22,6 @@ const services = [
     features: ['React / Next.js', 'PWA Capable', 'API Integration', 'Real-time Features'],
     color: 'from-fluff-accent/20 to-fluff-purple/10',
     accent: 'text-fluff-accent',
-    badge: '',
-    badgeColor: '',
   },
   {
     id: 'ai-consultancy',
@@ -36,8 +32,6 @@ const services = [
     features: ['AI Strategy & Roadmapping', 'LLM Integration', 'Automation Workflows', 'Custom AI Tools'],
     color: 'from-fluff-mint/20 to-fluff-sky/10',
     accent: 'text-fluff-mint',
-    badge: 'Trending 🔥',
-    badgeColor: 'bg-fluff-mint/15 text-fluff-mint border-fluff-mint/30',
   },
   {
     id: 'software-consultancy',
@@ -48,8 +42,6 @@ const services = [
     features: ['Tech Stack Reviews', 'Architecture Design', 'Code Audits', 'Team Mentoring'],
     color: 'from-fluff-gold/20 to-fluff-accent/10',
     accent: 'text-yellow-500',
-    badge: '',
-    badgeColor: '',
   },
   {
     id: 'launch-packages',
@@ -60,8 +52,6 @@ const services = [
     features: ['MVP in Weeks', 'Domain & Hosting', 'Cloud Setup', 'Analytics Included'],
     color: 'from-fluff-navy/15 to-fluff-sky/10',
     accent: 'text-fluff-navy',
-    badge: 'New! 🆕',
-    badgeColor: 'bg-fluff-navy/10 text-fluff-navy border-fluff-navy/20',
   },
 ];
 
@@ -126,12 +116,6 @@ const Services = () => {
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl`} />
 
                 <div className="relative z-10">
-                  {/* Badge */}
-                  {service.badge && (
-                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold border mb-4 ${service.badgeColor}`}>
-                      {service.badge}
-                    </span>
-                  )}
 
                   {/* Icon */}
                   <div className="flex items-center gap-3 mb-5">

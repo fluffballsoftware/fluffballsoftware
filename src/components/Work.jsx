@@ -11,6 +11,7 @@ const projects = [
     tags: ['React', 'AWS', 'WebSocket', 'DynamoDB'],
     color: 'from-fluff-sky/30 to-fluff-navy/20',
     accent: 'bg-fluff-sky/20 text-fluff-sky',
+    link: 'https://zebudy.com',
   },
   {
     id: 'project-ai-platform',
@@ -83,7 +84,20 @@ const Work = () => {
               </div>
               {/* Content */}
               <div className="p-6">
-                <h3 className="font-display text-2xl text-fluff-navy mb-2">{project.title}</h3>
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-display text-2xl text-fluff-navy">{project.title}</h3>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-bold text-fluff-sky hover:text-fluff-navy transition-colors duration-200 flex items-center gap-1"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Visit Site →
+                    </a>
+                  )}
+                </div>
                 <p className="text-fluff-navy/65 text-sm font-semibold leading-relaxed mb-5">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
