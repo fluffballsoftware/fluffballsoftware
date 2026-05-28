@@ -19,6 +19,16 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const handleMobileNavClick = (e, href) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    // Wait for the menu close animation to finish before scrolling
+    setTimeout(() => {
+      const target = document.querySelector(href);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }, 350);
+  };
+
   return (
     <motion.nav
       initial={{ y: -80, opacity: 0 }}
@@ -86,23 +96,23 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/95 backdrop-blur-xl border-t border-fluff-sky/20 px-6 pb-6"
+            className="md:hidden bg-white/95 backdrop-blur-xl border-t border-fluff-sky/20 px-6 pb-6 overflow-hidden"
           >
             <div className="flex flex-col gap-4 pt-4">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="font-bold text-fluff-navy hover:text-fluff-sky transition-colors py-2 text-lg"
+                  onClick={(e) => handleMobileNavClick(e, link.href)}
+                  className="font-bold text-fluff-navy hover:text-fluff-sky transition-colors py-2 text-lg block"
                 >
                   {link.label}
                 </a>
               ))}
               <a
                 href="#contact"
-                onClick={() => setMenuOpen(false)}
-                className="btn-shine text-center px-6 py-3 bg-fluff-navy text-white font-bold rounded-full shadow-navy mt-2"
+                onClick={(e) => handleMobileNavClick(e, '#contact')}
+                className="btn-shine block text-center px-6 py-3 bg-fluff-navy text-white font-bold rounded-full shadow-navy mt-2"
               >
                 Let's Chat! ✨
               </a>
