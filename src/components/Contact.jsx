@@ -17,11 +17,39 @@ const Contact = () => {
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const formEl = e.target; // capture before any async
     setStatus('loading');
-    // Simulate form submission
-    setTimeout(() => setStatus('success'), 1500);
+    
+    try {
+      const object = {
+        access_key: "82239b52-9a21-459a-b3f2-634f05204001",
+        subject: `New Inquiry from ${form.name}`,
+        name: form.name,
+        email: form.email,
+        service: form.service,
+        message: form.message,
+      };
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(object),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        setStatus('success');
+        formEl.reset();
+      } else {
+        console.error("Form error:", data);
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error("Form error:", error);
+      setStatus('error');
+    }
   };
 
   return (
@@ -149,6 +177,11 @@ const Contact = () => {
                 </motion.div>
               ) : (
                 <form id="contact-form" onSubmit={handleSubmit} className="space-y-5">
+                  {status === 'error' && (
+                    <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm font-semibold">
+                      Something went wrong. Please try again or email us directly at hello@fluffballsoftware.com.
+                    </div>
+                  )}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label htmlFor="contact-name" className="block text-sm font-bold text-fluff-navy mb-1.5">
