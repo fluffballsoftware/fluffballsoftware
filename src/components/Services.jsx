@@ -29,7 +29,7 @@ const services = [
     emoji: '🤖',
     title: 'AI Consultancy',
     description: 'From chatbots to intelligent workflows, we help you harness the power of AI without the jargon.',
-    features: ['AI Strategy & Roadmapping', 'LLM Integration', 'Automation Workflows', 'Custom AI Tools'],
+    features: ['AI Strategy & Roadmapping', 'LLM Integration', 'Automation Workflows', 'Custom AI Tools', 'Agentic Development'],
     color: 'from-fluff-mint/20 to-fluff-sky/10',
     accent: 'text-fluff-mint',
   },

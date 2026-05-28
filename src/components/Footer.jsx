@@ -32,7 +32,7 @@ const Footer = () => {
 
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <a href="#hero" className="flex items-center gap-3 mb-5 group">
+            <a href="https://www.fluffballsoftware.co.uk" className="flex items-center gap-3 mb-5 group">
               <img
                 src="/logo.jpeg"
                 alt="Fluff Ball Software Logo"
@@ -76,7 +76,7 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="pb-6 pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/35 text-xs font-semibold">
-          <p>© {year} Fluff Ball Software Ltd. All rights reserved.</p>
+          <p>© {year} <a href="https://www.fluffballsoftware.co.uk" className="hover:text-fluff-sky transition-colors duration-200">Fluff Ball Software Ltd.</a> All rights reserved.</p>
           <p className="flex items-center gap-1.5">
             Made with <Heart className="w-3 h-3 text-fluff-accent fill-fluff-accent" /> and yes, we named the company after the cat 🐱
           </p>
