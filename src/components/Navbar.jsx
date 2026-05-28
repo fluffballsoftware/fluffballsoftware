@@ -45,7 +45,7 @@ const Navbar = () => {
         {/* Logo */}
         <a href="#hero" id="nav-logo" className="flex items-center gap-3 group">
           <motion.img
-            src={logoSrc}
+            src={`${import.meta.env.BASE_URL}logo.jpeg`}
             alt="Fluff Ball Software Logo"
             className="h-12 w-auto rounded-2xl shadow-fluff group-hover:shadow-fluff-lg transition-shadow duration-300"
             whileHover={{ rotate: [0, -5, 5, -3, 0], transition: { duration: 0.5 } }}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Zap, Heart } from 'lucide-react';
-import logoSrc from '/logo.jpeg';
+
 
 const floatingItems = [
   { emoji: '🐱', delay: 0, x: '5%', y: '20%', size: 'text-4xl' },
@@ -150,7 +150,7 @@ const Hero = () => {
 
           {/* Logo image */}
           <motion.img
-            src={logoSrc}
+            src={`${import.meta.env.BASE_URL}logo.jpeg`}
             alt="Fluff Ball Software — a fluffy blue cat curled in a ball with binary code"
             className="relative w-72 h-72 md:w-96 md:h-96 rounded-full object-cover shadow-fluff-lg border-4 border-white"
             animate={{ y: [0, -12, 0] }}
