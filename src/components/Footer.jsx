@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
+import logoSrc from '/logo.jpeg';
 
 const footerLinks = {
   Services: [
@@ -34,7 +35,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <a href="https://www.fluffballsoftware.co.uk" className="flex items-center gap-3 mb-5 group">
               <img
-                src="/logo.jpeg"
+                src={logoSrc}
                 alt="Fluff Ball Software Logo"
                 className="h-14 w-auto rounded-2xl shadow-fluff group-hover:shadow-fluff-lg transition-shadow duration-300"
               />

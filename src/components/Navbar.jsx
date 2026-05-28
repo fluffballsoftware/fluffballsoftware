@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import logoSrc from '/logo.jpeg';
 
 const navLinks = [
   { label: 'Services', href: '#services' },
@@ -44,7 +45,7 @@ const Navbar = () => {
         {/* Logo */}
         <a href="#hero" id="nav-logo" className="flex items-center gap-3 group">
           <motion.img
-            src="/logo.jpeg"
+            src={logoSrc}
             alt="Fluff Ball Software Logo"
             className="h-12 w-auto rounded-2xl shadow-fluff group-hover:shadow-fluff-lg transition-shadow duration-300"
             whileHover={{ rotate: [0, -5, 5, -3, 0], transition: { duration: 0.5 } }}
