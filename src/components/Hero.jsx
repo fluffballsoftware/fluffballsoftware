@@ -150,7 +150,8 @@ const Hero = () => {
 
           {/* Logo image */}
           <motion.img
-            src={`${import.meta.env.BASE_URL}logo.jpeg`}
+            src={`${import.meta.env.BASE_URL}logo.webp`}
+            fetchPriority="high"
             alt="Fluff Ball Software — a fluffy blue cat curled in a ball with binary code"
             className="relative w-72 h-72 md:w-96 md:h-96 rounded-full object-cover shadow-fluff-lg border-4 border-white"
             animate={{ y: [0, -12, 0] }}

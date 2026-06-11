@@ -35,7 +35,8 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <a href="https://www.fluffballsoftware.co.uk" className="flex items-center gap-3 mb-5 group">
               <img
-                src={`${import.meta.env.BASE_URL}logo.jpeg`}
+                loading="lazy"
+                src={`${import.meta.env.BASE_URL}logo.webp`}
                 alt="Fluff Ball Software Logo"
                 className="h-14 w-auto rounded-2xl shadow-fluff group-hover:shadow-fluff-lg transition-shadow duration-300"
               />
