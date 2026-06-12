@@ -32,7 +32,7 @@ const PrivacyPolicy = () => {
             <div>
               <h2 className="font-display text-2xl text-fluff-navy mb-4">Introduction</h2>
               <p>
-                Fluff Ball Software Ltd. ("we", "us") takes your privacy seriously. This policy sets out how we use and protect your personal data when you visit our website. As the data controller, we are responsible for your personal data.
+                Fluff Ball Software Ltd. ("we", "us") takes your privacy seriously. This policy sets out how we use and protect your personal data when you visit our website. As the data controller, we are responsible for your personal data. We are registered with the Information Commissioner's Office (ICO) under registration reference: ZC165699.
               </p>
             </div>
 
