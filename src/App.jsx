@@ -6,6 +6,7 @@ import Work from './components/Work';
 import About from './components/About';
 import Contact from './components/Contact';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import CookiePolicy from './components/CookiePolicy';
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -24,6 +25,8 @@ function App() {
     <Layout>
       {currentPath === '/privacy' ? (
         <PrivacyPolicy />
+      ) : currentPath === '/cookie-policy' ? (
+        <CookiePolicy />
       ) : (
         <>
           <Hero />
