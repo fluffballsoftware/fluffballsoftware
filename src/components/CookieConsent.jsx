@@ -10,11 +10,22 @@ const CookieConsent = () => {
       // Small delay for better UX
       const timer = setTimeout(() => setIsVisible(true), 1500);
       return () => clearTimeout(timer);
+    } else if (consent === 'accepted') {
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', {
+          'analytics_storage': 'granted'
+        });
+      }
     }
   }, []);
 
   const acceptCookies = () => {
     localStorage.setItem('cookie-consent', 'accepted');
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+    }
     setIsVisible(false);
   };
 
