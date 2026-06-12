@@ -43,7 +43,7 @@ const Navbar = () => {
     >
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
-        <a href="#hero" id="nav-logo" className="flex items-center gap-3 group">
+        <a href="/" id="nav-logo" className="flex items-center gap-3 group">
           <motion.img
             src={`${import.meta.env.BASE_URL}logo.webp`}
             alt="Fluff Ball Software Logo"

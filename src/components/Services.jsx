@@ -81,10 +81,7 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card shadow-fluff border border-fluff-sky/30 mb-6">
-            <span>⚡</span>
-            <span className="text-sm font-bold text-fluff-navy">What We Do Best</span>
-          </div>
+
           <h2 className="font-display text-5xl md:text-6xl text-fluff-navy mb-4">
             Our <span className="gradient-text-brand">Services</span>
           </h2>

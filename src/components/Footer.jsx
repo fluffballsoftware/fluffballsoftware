@@ -16,6 +16,9 @@ const footerLinks = {
     { label: 'Our Work', href: '#work' },
     { label: 'Contact', href: '#contact' },
   ],
+  Legal: [
+    { label: 'Privacy Policy', href: '/privacy' },
+  ],
 };
 
 
