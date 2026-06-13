@@ -10,6 +10,8 @@
     function gtag(){dataLayer.push(arguments);}
     // Default consent to 'denied' BEFORE the GTM script loads
     gtag('consent', 'default', {
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
       'ad_storage': 'denied',
       'analytics_storage': 'denied'
     });

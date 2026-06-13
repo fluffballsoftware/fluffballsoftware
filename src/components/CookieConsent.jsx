@@ -13,6 +13,9 @@ const CookieConsent = () => {
     } else if (consent === 'accepted') {
       if (typeof window.gtag === 'function') {
         window.gtag('consent', 'update', {
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'ad_storage': 'granted',
           'analytics_storage': 'granted'
         });
       }
@@ -23,6 +26,9 @@ const CookieConsent = () => {
     localStorage.setItem('cookie-consent', 'accepted');
     if (typeof window.gtag === 'function') {
       window.gtag('consent', 'update', {
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'ad_storage': 'granted',
         'analytics_storage': 'granted'
       });
     }
